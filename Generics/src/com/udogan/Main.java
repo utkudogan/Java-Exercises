@@ -8,19 +8,19 @@ public class Main {
         SoccerPlayer beckham = new SoccerPlayer("Beckham");
 
         Team<FootballPlayer> adelaideCrows = new Team<>("Adelaide Crows");
-        adelaideCrows.addplayer(joe);
+        adelaideCrows.addPlayer(joe);
 
 
         System.out.println(adelaideCrows.numberOfPlayers());
 
         Team<BaseballPlayer> baseballTeam = new Team<>("Chicago Cubs");
-        baseballTeam.addplayer(pat);
+        baseballTeam.addPlayer(pat);
 
         Team<SoccerPlayer> cimbom = new Team<>("Re re re");
-        cimbom.addplayer(beckham);
+        cimbom.addPlayer(beckham);
         Team<FootballPlayer> galatasaray = new Team<>("Galatasaray");
         FootballPlayer onyekuru = new FootballPlayer("Onyekuru");
-        galatasaray.addplayer(onyekuru);
+        galatasaray.addPlayer(onyekuru);
         Team<FootballPlayer> fener = new Team<>("Fener");
         Team<FootballPlayer> besiktas = new Team<>("Beşiktaş");
 
