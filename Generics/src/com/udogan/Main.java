@@ -18,5 +18,22 @@ public class Main {
 
         Team<SoccerPlayer> cimbom = new Team<>("Re re re");
         cimbom.addplayer(beckham);
+        Team<FootballPlayer> galatasaray = new Team<>("Galatasaray");
+        FootballPlayer onyekuru = new FootballPlayer("Onyekuru");
+        galatasaray.addplayer(onyekuru);
+        Team<FootballPlayer> fener = new Team<>("Fener");
+        Team<FootballPlayer> besiktas = new Team<>("Beşiktaş");
+
+        galatasaray.matchResult(fener, 3,1);
+        galatasaray.matchResult(besiktas,2,2);
+        galatasaray.matchResult(besiktas,2,1);
+
+        System.out.println("Rankings");
+        System.out.println(galatasaray.getName() + ": " + galatasaray.ranking());
+        System.out.println(besiktas.getName() + ": " + besiktas.ranking());
+        System.out.println(fener.getName() + ": " + fener.ranking());
+
+        System.out.println(galatasaray.compareTo(fener));
+        System.out.println(fener.compareTo(galatasaray));
     }
 }
