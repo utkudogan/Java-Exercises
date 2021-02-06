@@ -8,7 +8,7 @@ public class ScopeCheck {
         System.out.println("ScopeCheck created, publicVar = " + publicVar + ", varOne = " + varOne);
     }
 
-    public int getPrivatevar() {
+    public int getVarOne() {
         return varOne;
     }
 
@@ -20,8 +20,15 @@ public class ScopeCheck {
         }
     }
 
+    public void useInnerClass(){
+        InnerClass innerClass = new InnerClass();
+        System.out.println("varThree from outer class: " + innerClass.varthree);
+        System.out.println("private varSix from outer class: " + innerClass.varSix);
+    }
+
     public class InnerClass {
         public int varthree = 3;
+        private int varSix = 6;
 
         public InnerClass() {
             System.out.println("InnerClass created, varthree is " + varthree);
