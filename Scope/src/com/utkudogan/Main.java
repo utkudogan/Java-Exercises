@@ -6,7 +6,7 @@ public class Main {
         String privateVar = "this is private to main";
 
         ScopeCheck scopeInstance = new ScopeCheck();
-        System.out.println("scopeInstance privateVar is " + scopeInstance.getPrivatevar());
+        System.out.println("scopeInstance varthree is " + scopeInstance.getPrivatevar());
         System.out.println(privateVar);
 
         scopeInstance.timesPrivateVar();
