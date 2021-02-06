@@ -3,6 +3,14 @@ package com.utkudogan;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        String privateVar = "this is private to main";
+
+        ScopeCheck scopeInstance = new ScopeCheck();
+        System.out.println("scopeInstance privateVar is " + scopeInstance.getPrivatevar());
+        System.out.println(privateVar);
+
+        scopeInstance.timesPrivateVar();
+        ScopeCheck.InnerClass innerClass = scopeInstance.new InnerClass();
+        innerClass.timesPrivateVar();
     }
 }
