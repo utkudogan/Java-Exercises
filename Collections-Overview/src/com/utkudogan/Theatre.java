@@ -1,7 +1,6 @@
 package com.utkudogan;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Theatre {
     private final String theatreName;
@@ -24,18 +23,14 @@ public class Theatre {
     }
 
     public boolean reserveSeat(String seatNumber) {
-        Seat requestedSeat = null;
-        for (Seat seat : seats) {
-            if (seat.getSeatNumber().equals(seatNumber)) {
-                requestedSeat = seat;
-                break;
-            }
-        }
-        if (requestedSeat == null) {
+        Seat requestedSeat = new Seat(seatNumber);
+        int foundedSeat = Collections.binarySearch(seats,requestedSeat,null);
+        if (foundedSeat >= 0) {
+            return seats.get(foundedSeat).reserve();
+        }else{
             System.out.println("There is no seat " + seatNumber);
             return false;
         }
-        return requestedSeat.reserve();
     }
 
     public void getSeats() {
@@ -44,12 +39,17 @@ public class Theatre {
         }
     }
 
-    private class Seat {
+    private class Seat implements  Comparable<Seat>{
         private final String seatNumber;
         private boolean reserved = false;
 
         public Seat(String seatNumber) {
             this.seatNumber = seatNumber;
+        }
+
+        @Override
+        public int compareTo(Seat seat) {
+            return this.seatNumber.compareToIgnoreCase(seat.getSeatNumber());
         }
 
         public boolean reserve() {
