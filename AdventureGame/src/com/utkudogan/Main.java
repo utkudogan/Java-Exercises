@@ -42,7 +42,7 @@ public class Main {
         int loc = 1;
         while (true){
             System.out.println(locations.get(loc).getDescription());
-            if (loc == 0) {q
+            if (loc == 0) {
                 break;
             }
 
@@ -54,11 +54,24 @@ public class Main {
             System.out.println();
 
             String direction = scanner.nextLine().toUpperCase();
+            String[] acceptedDirections = {"SOUTH", "NORTH", "WEST", "EAST"};
 
-            if (exits.containsKey(direction)) {
-                loc = exits.get(direction);
-            }else{
-                System.out.println("You cannot go in that direction");
+            int arrayLength = 0;
+            for (String dir : acceptedDirections) {
+                if (direction.contains(dir)) {
+                    String firstLetter = String.valueOf(dir.charAt(0));
+                    if (exits.containsKey(firstLetter)) {
+                        loc = exits.get(firstLetter);
+                    }else{
+                        System.out.println("You cannot go in that direction");
+                    }
+                    arrayLength++;
+                    break;
+                }
+                arrayLength++;
+                if (arrayLength == 4) {
+                    System.out.println("There is no correct direction in your command");
+                }
             }
         }
     }
