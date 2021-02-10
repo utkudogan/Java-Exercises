@@ -47,14 +47,15 @@ public class Main {
             }
 
             Map<String, Integer> exits = locations.get(loc).getExits();
-            System.out.println("Available exits are ");
+            System.out.print("Available exits are ");
             for (String exit: exits.keySet()) {
                 System.out.print(exit + ", ");
             }
             System.out.println();
 
             String direction = scanner.nextLine().toUpperCase();
-            String[] acceptedDirections = {"SOUTH", "NORTH", "WEST", "EAST"};
+            direction = direction.replace("İ","I");
+            String[] acceptedDirections = {"SOUTH", "NORTH", "WEST", "EAST", "QUIT"};
 
             int arrayLength = 0;
             for (String dir : acceptedDirections) {
@@ -69,8 +70,8 @@ public class Main {
                     break;
                 }
                 arrayLength++;
-                if (arrayLength == 4) {
-                    System.out.println("There is no correct direction in your command");
+                if (arrayLength == acceptedDirections.length) {
+                    System.out.println("You cannot go in that direction");
                 }
             }
         }
