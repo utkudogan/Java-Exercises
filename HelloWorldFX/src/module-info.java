@@ -1,4 +1,4 @@
-module HelloWorldFX {
+module HElloWorldFX {
     requires javafx.fxml;
     requires javafx.controls;
 
