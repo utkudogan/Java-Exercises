@@ -1,0 +1,5 @@
+Mail Birthday Card	Buy a birthday card	12-01-2021
+Doctors appointment	you have a appointment with doctor	15-03-2021
+Java Exam	you have a java exam 	01-04-2021
+Fly to İstanbul	you are going to visit your brother and his wife in istanbul	20-07-2021
+Meeting with friends	you are going to meet with your friends	19-09-2021

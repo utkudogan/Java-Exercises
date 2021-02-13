@@ -1,5 +1,6 @@
 package com.utkudogan.todolist;
 
+import com.utkudogan.todolist.datamodel.ToDoData;
 import com.utkudogan.todolist.datamodel.ToDoItem;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -27,23 +28,25 @@ public class Controller {
     private List<ToDoItem> toDoItems;
 
     public void initialize(){
-        ToDoItem item1 = new ToDoItem("Mail Birthday Card", "Buy a birthday card",
-                LocalDate.of(2021, Month.JANUARY,12));
-        ToDoItem item2 = new ToDoItem("Doctors appointment", "you have a appointment with doctor",
-                LocalDate.of(2021, Month.MARCH,15));
-        ToDoItem item3 = new ToDoItem("Java Exam", "you have a java exam ",
-                LocalDate.of(2021, Month.APRIL,1));
-        ToDoItem item4 = new ToDoItem("Fly to İstanbul", "you are going to visit your brother and his wife in istanbul",
-                LocalDate.of(2021, Month.JULY,20));
-        ToDoItem item5 = new ToDoItem("Meeting with friends", "you are going to meet with your friends",
-                LocalDate.of(2021, Month.SEPTEMBER,19));
-
-        toDoItems = new ArrayList<>();
-        toDoItems.add(item1);
-        toDoItems.add(item2);
-        toDoItems.add(item3);
-        toDoItems.add(item4);
-        toDoItems.add(item5);
+//        ToDoItem item1 = new ToDoItem("Mail Birthday Card", "Buy a birthday card",
+//                LocalDate.of(2021, Month.JANUARY,12));
+//        ToDoItem item2 = new ToDoItem("Doctors appointment", "you have a appointment with doctor",
+//                LocalDate.of(2021, Month.MARCH,15));
+//        ToDoItem item3 = new ToDoItem("Java Exam", "you have a java exam ",
+//                LocalDate.of(2021, Month.APRIL,1));
+//        ToDoItem item4 = new ToDoItem("Fly to İstanbul", "you are going to visit your brother and his wife in istanbul",
+//                LocalDate.of(2021, Month.JULY,20));
+//        ToDoItem item5 = new ToDoItem("Meeting with friends", "you are going to meet with your friends",
+//                LocalDate.of(2021, Month.SEPTEMBER,19));
+//
+//        toDoItems = new ArrayList<>();
+//        toDoItems.add(item1);
+//        toDoItems.add(item2);
+//        toDoItems.add(item3);
+//        toDoItems.add(item4);
+//        toDoItems.add(item5);
+//
+//        ToDoData.getInstance().setToDoItems(toDoItems);
 
         todoListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<ToDoItem>() {
             @Override
@@ -57,7 +60,7 @@ public class Controller {
             }
         });
 
-        todoListView.getItems().setAll(toDoItems);
+        todoListView.getItems().setAll(ToDoData.getInstance().getToDoItems());
         todoListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         todoListView.getSelectionModel().selectFirst();
     }
