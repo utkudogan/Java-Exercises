@@ -1,9 +1,11 @@
 package sample;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class Controller {
@@ -15,6 +17,8 @@ public class Controller {
     private Button btnBye;
     @FXML
     private CheckBox  ourCheckBox;
+    @FXML
+    private Label ourLabel;
 
     @FXML
     public void handleChange(){
@@ -35,11 +39,24 @@ public class Controller {
             System.out.println("Bye " + nameField.getText());
         }
 
-        try{
-            Thread.sleep(10000);
-        }catch (InterruptedException e){
+        Runnable task = new Runnable() {
+            @Override
+            public void run() {
+                try{
+                    Thread.sleep(10000);
+                    Platform.runLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            ourLabel.setText("adadfaf");
+                        }
+                    });
+                }catch (InterruptedException ex){
 
-        }
+                }
+            }
+        };
+
+        new Thread(task).start();
 
         if (ourCheckBox.isSelected()){
             nameField.clear();
