@@ -39,7 +39,7 @@ public class Controller {
             }
         });
 
-        todoListView.getItems().setAll(ToDoData.getInstance().getToDoItems());
+        todoListView.setItems(ToDoData.getInstance().getToDoItems());
         todoListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         todoListView.getSelectionModel().selectFirst();
     }
@@ -66,11 +66,7 @@ public class Controller {
         if (result.isPresent() && result.get() == ButtonType.OK) {
             DialogController controller = fxmlLoader.getController();
             ToDoItem newItem = controller.processResult();
-            todoListView.getItems().setAll(ToDoData.getInstance().getToDoItems());
             todoListView.getSelectionModel().select(newItem);
-            System.out.println("OK");
-        }else{
-            System.out.println("Cancel");
         }
     }
 
@@ -79,10 +75,5 @@ public class Controller {
         ToDoItem item = todoListView.getSelectionModel().getSelectedItem();
         itemDetailTextArea.setText(item.getDetails());
         deadLineLabel.setText(item.getDeadLine().toString());
-//        StringBuilder sb = new StringBuilder(item.getDetails());
-//        sb.append("\n\n\n\n");
-//        sb.append("Due: ");
-//        sb.append(item.getDeadLine().toString());
-//        itemDetailTextArea.setText(sb.toString());
     }
 }
