@@ -1,7 +1,6 @@
 Mail Birthday Card	Buy a birthday card	12-01-2021
 Doctors appointment	you have a appointment with doctor	15-03-2021
 Fly to İstanbul	you are going to visit your brother and his wife in istanbul	20-07-2021
-Meeting with friends	you are going to meet with your friends	19-09-2021
 item 1	test this dialog	16-02-2021
 item 2	test 2	15-02-2021
 item 3	test	09-02-2021
