@@ -4,3 +4,4 @@ Fly to İstanbul	you are going to visit your brother and his wife in istanbul	20
 item 1	test this dialog	16-02-2021
 item 2	test 2	15-02-2021
 item 3	test	09-02-2021
+item 4	test toggle button	17-02-2021
