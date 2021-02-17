@@ -1,0 +1,10 @@
+.button {
+    -fx-background-color: green;
+    -fx-text-fill: aliceblue;
+}
+
+#button_three {
+    -fx-background-color: blue;
+    -fx-text-fill: aliceblue;
+}
+
