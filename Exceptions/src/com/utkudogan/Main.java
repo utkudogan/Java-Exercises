@@ -42,11 +42,11 @@ public class Main {
         for (int i = 0; i < input.length(); i++) {
             if (Character.isDigit(input.charAt(i))){
                 isvalid = false;
-                break;;
+                break;
             }
         }
         if (isvalid){
-            return Integer.parseInt(input)
+            return Integer.parseInt(input);
         }else {
             return 0;
         }
