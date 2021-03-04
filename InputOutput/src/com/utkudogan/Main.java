@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
-    private static com.utkudogan.Locations locations = new com.utkudogan.Locations();
+    private static Locations locations = new Locations();
 
     public static void main(String[] args) {
         // Change the program to allow players to type full words, or phrases, then move to the
@@ -16,7 +16,7 @@ public class Main {
         //
         // Single letter commands (N, W, S, E, Q) should still be available.
 
-	    Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         Map<String, String> vocabulary = new HashMap<String, String>();
         vocabulary.put("QUIT", "Q");
