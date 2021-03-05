@@ -8,7 +8,10 @@ public class Locations implements Map<Integer, Location> {
 
     public static void main(String[] args) throws IOException {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 4f530de57514fc7ccc488be7342a4ad304a1788e
 //        try (DataOutputStream locFile = new DataOutputStream(new BufferedOutputStream(new FileOutputStream("locations.dat")))) {
 //            for (Location location : locations.values()) {
 //                locFile.writeInt(location.getLocationID());
@@ -25,6 +28,9 @@ public class Locations implements Map<Integer, Location> {
 //                }
 //            }
 //        }
+<<<<<<< HEAD
+>>>>>>> 4f530de57514fc7ccc488be7342a4ad304a1788e
+=======
 >>>>>>> 4f530de57514fc7ccc488be7342a4ad304a1788e
         try (ObjectOutputStream locFile = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("locations.dat")))) {
             for(Location location : locations.values()) {
@@ -52,8 +58,11 @@ public class Locations implements Map<Integer, Location> {
 
                     locations.put(location.getLocationID(), location);
 <<<<<<< HEAD
+<<<<<<< HEAD
                 } catch (EOFException e) {
 =======
+=======
+>>>>>>> 4f530de57514fc7ccc488be7342a4ad304a1788e
                 } catch(EOFException e) {
 >>>>>>> 4f530de57514fc7ccc488be7342a4ad304a1788e
                     eof = true;
@@ -62,6 +71,7 @@ public class Locations implements Map<Integer, Location> {
         } catch(InvalidClassException e) {
             System.out.println("InvalidClassException " + e.getMessage());
         } catch(IOException io) {
+<<<<<<< HEAD
 <<<<<<< HEAD
             System.out.println("IO Exception " + io.getMessage());
         } catch(ClassNotFoundException e) {
@@ -72,6 +82,12 @@ public class Locations implements Map<Integer, Location> {
         } catch(ClassNotFoundException e) {
             System.out.println("ClassNotFoundException " + e.getMessage());
         }
+=======
+            System.out.println("IO Exception" + io.getMessage());
+        } catch(ClassNotFoundException e) {
+            System.out.println("ClassNotFoundException " + e.getMessage());
+        }
+>>>>>>> 4f530de57514fc7ccc488be7342a4ad304a1788e
 //            while(!eof) {
 //                try {
 //                    Map<String, Integer> exits = new LinkedHashMap<>();
