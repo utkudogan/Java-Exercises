@@ -2,11 +2,14 @@ package com.utkudogan;
 
 import java.io.Serializable;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class Location implements Serializable{
 =======
+=======
+>>>>>>> 4f530de57514fc7ccc488be7342a4ad304a1788e
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -15,6 +18,9 @@ import java.util.Map;
  * Created by dev on 8/12/2015.
  */
 public class Location implements Serializable {
+<<<<<<< HEAD
+>>>>>>> 4f530de57514fc7ccc488be7342a4ad304a1788e
+=======
 >>>>>>> 4f530de57514fc7ccc488be7342a4ad304a1788e
     private final int locationID;
     private final String description;
