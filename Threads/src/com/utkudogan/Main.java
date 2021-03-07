@@ -22,9 +22,16 @@ public class Main {
             @Override
             public void run() {
                 System.out.println(ANSI_RED + "Anonymous class's implementation of run()");
+                try {
+                    anotherThread.join(1000);
+                    System.out.println(ANSI_RED + "AnotherThread terminated.");
+                }catch (InterruptedException e){
+                    System.out.println(ANSI_RED + " I couldn't wait after all. ı was interrupted");
+                }
             }
         });
         myRunnableThread.start();
+        //anotherThread.interrupt();
         System.out.println(ANSI_PURPLE + "Hello again from the main thread");
     }
 }
