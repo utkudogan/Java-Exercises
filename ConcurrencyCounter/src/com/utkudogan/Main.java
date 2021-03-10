@@ -34,12 +34,14 @@ class Countdown{
                 break;
         }
 
-        for (int i = 10; i > 0; i--) {
-            System.out.println(color + Thread.currentThread().getName() + ": i = " + i);
-        }
+        synchronized (color){
+            for (int i = 10; i > 0; i--) {
+                System.out.println(color + Thread.currentThread().getName() + ": i = " + i);
+            }
 
-        for (; j > 10; j--) {
-            System.out.println(color + Thread.currentThread().getName() + ": i = " + j);
+            for (; j > 10; j--) {
+                System.out.println(color + Thread.currentThread().getName() + ": i = " + j);
+            }
         }
     }
 }
