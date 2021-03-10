@@ -19,7 +19,7 @@ public class Main {
 
 class Countdown{
     private int j = 20;
-    public void doCountdown(){
+    public synchronized void doCountdown(){
         String color;
 
         switch (Thread.currentThread().getName()){
