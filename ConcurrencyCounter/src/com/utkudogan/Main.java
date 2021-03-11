@@ -19,7 +19,7 @@ public class Main {
 
 class Countdown{
     private int j = 20;
-    public synchronized void doCountdown(){
+    public void doCountdown(){
         String color;
 
         switch (Thread.currentThread().getName()){
@@ -34,7 +34,7 @@ class Countdown{
                 break;
         }
 
-        synchronized (color){
+        synchronized (this){
             for (int i = 10; i > 0; i--) {
                 System.out.println(color + Thread.currentThread().getName() + ": i = " + i);
             }
